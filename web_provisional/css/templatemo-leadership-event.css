@@ -1022,6 +1022,93 @@ strong {
   color: var(--white-color);
 }
 
+/* EMECE ENERGÍA */
+.container-introduccion {
+    position: relative; /* Añade posición relativa al contenedor */
+    background-image: url('../images/energiasolar.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.container-introduccion .filtro-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(237, 228, 63, 0.4); /* Filtro rojo semi-transparente */
+}
+
+.texto-introduccion {
+    text-align: center;
+}
+
+.texto-introduccion p {
+    text-align: left; /* Alinea el texto del párrafo a la izquierda */
+}
+.sectionEmeceEnergia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+.sectionEmeceEnergia .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #3498db;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sectionEmeceEnergia .circle:nth-child(1) {
+    right: calc(50% - 75px);
+}
+
+.sectionEmeceEnergia .circle:nth-child(3) {
+    left: calc(50% - 75px);
+}
+
+.sectionEmeceEnergia .circle.circle2 {
+    width: 120px;
+    height: 120px;
+}
+
+.sectionEmeceEnergia .square {
+    width: calc((100% - 80px) / 4);
+    height: 250px;
+    background-color: grey;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+    margin-right: 20px;
+}
+
+.sectionEmeceEnergia .square.square1 {
+    margin-left: 100px;
+}
+
+.text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 14px;
+}
+
 
 /*---------------------------------------
   RESPONSIVE STYLES

@@ -68,10 +68,11 @@
             foreach ($files as $file) {
                 $extension = pathinfo($file, PATHINFO_EXTENSION);
                 if (in_array($extension, $allowedExtensions)) {
-                    echo '<li><a href="#" class="openFileModal" data-file="' . $uploadDirectory . $file . '">' . $file . '</a></li>';
+                    echo '<li><a href="#" class="openFileModal" data-file="' . $uploadDirectory . $file . '" >' . $file . '</a></li>';
                 }
             }
             ?>
+            <a href="uploads/wiki-107.pdf">Descargar</a>
         </ul>
     </div>
 
