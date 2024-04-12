@@ -1034,9 +1034,11 @@ strong {
     display: flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga del contenedor */
 }
 
-.container-introduccion .filtro-color {
+.container-introduccion::after {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -1046,33 +1048,45 @@ strong {
 }
 
 .texto-introduccion {
+    position: relative; /* Añade posición relativa */
+    z-index: 1; /* Asegura que el texto esté delante del pseudo-elemento */
     text-align: center;
 }
 
 .texto-introduccion p {
     text-align: left; /* Alinea el texto del párrafo a la izquierda */
 }
+
 .sectionEmeceEnergia {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
     position: relative;
+    text-align: center;
 }
 
 .sectionEmeceEnergia .circle {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #3498db;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     z-index: 2;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .sectionEmeceEnergia .circle:nth-child(1) {
-    right: calc(50% - 75px);
+    right: calc(50% - 65px);
 }
 
 .sectionEmeceEnergia .circle:nth-child(3) {
@@ -1080,8 +1094,8 @@ strong {
 }
 
 .sectionEmeceEnergia .circle.circle2 {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
 }
 
 .sectionEmeceEnergia .square {
@@ -1095,7 +1109,27 @@ strong {
     transition: transform 0.3s ease-in-out;
     z-index: 1;
     margin-right: 20px;
+    border-radius: 10px;
 }
+
+.sectionEmeceEnergia .square::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.5); /* Ajusta el último valor para la opacidad */
+    z-index: 1; /* Asegura que el pseudo-elemento esté detrás del contenido */
+    transition: background-color 0.3s ease; /* Transición suave */
+    cursor: pointer;
+}
+
+.sectionEmeceEnergia .square:hover::before {
+    background-color: rgba(128, 128, 128, 0); /* Cambia el último valor a 0 para hacerlo transparente al pasar el cursor */
+}
+
+
 
 .sectionEmeceEnergia .square.square1 {
     margin-left: 100px;
@@ -1108,6 +1142,7 @@ strong {
     color: white;
     font-size: 14px;
 }
+
 
 
 /*---------------------------------------

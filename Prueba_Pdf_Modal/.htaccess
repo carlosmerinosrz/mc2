@@ -1,4 +1,0 @@
-<FilesMatch "\.pdf$">
-    Header set Content-Type application/pdf
-    Header unset Content-Disposition
-</FilesMatch>
